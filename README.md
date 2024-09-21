@@ -27,3 +27,11 @@ Data Analysis:
 Data Visualisation:
 
 1. Bar Chart of Survival Rates
+
+
+# Week 2
+
+1. Object-Oriented Programming (OOP) and Writing Functions
+2. Add Command-Line Interface (CLI) Features
+3. Add Logging to Your Script
+4. Write 3 Functions for Data Transformation Using `apply()`
