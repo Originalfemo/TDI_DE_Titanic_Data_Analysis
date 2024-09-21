@@ -17,7 +17,7 @@ logging.basicConfig(
 
 #Task 1
 class TitanicCleaner:
-    def __init__(self, file_path):
+    def __init__(self, file_path: str) -> None:
         self.file_path = file_path
         self.df = None
         
@@ -26,14 +26,15 @@ class TitanicCleaner:
         self.df = pd.read_csv('tested.csv')
         logging.info('Data loaded successfully')
  
- # Fill Missing Values       
+    # Fill Missing Values       
     def fill_missing_values(self):
         logging.info('Filling Missing Values')
         self.df['Age'].fillna(self.df['Age'].median(), inplace=True)
         self.df['Fare'].fillna(self.df['Fare'].median(), inplace=True)
         self.df['Cabin'].fillna(self.df['Cabin'].mode()[0], inplace=True)
+        logging.info('Filled Missing Values')
     
- # Remove Duplicates   
+    # Remove Duplicates   
     def remove_duplicates(self):
         logging.info('Removing Duplicates')
         self.df.drop_duplicates(inplace=True)
@@ -45,7 +46,7 @@ class TitanicCleaner:
     def get_cleaned_data(self):
         return self.df
 
-# Create age_bin    
+    # Create age_bin    
     def age_bin(self):
         logging.info('Create an Age bin')
         def age_binning(age):
@@ -72,14 +73,16 @@ class TitanicCleaner:
         self.df['Embarked'] = self.df['Embarked'].apply(lambda x: embarked_map.get(x, x))
     
  
-cleaner = TitanicCleaner('tested.csv')
-cleaner.load_data()
-cleaner.clean_data()
-cleaner.age_bin()
-cleaner.family_size()
-cleaner.map_embarked()
-cleaned_df = cleaner.get_cleaned_data()
-cleaned_df.head()
+# cleaner = TitanicCleaner('tested.csv')
+# cleaner.load_data()
+# cleaner.clean_data()
+# cleaner.age_bin()
+# cleaner.family_size()
+# cleaner.map_embarked()
+# cleaned_df = cleaner.get_cleaned_data()
+# cleaned_df.head()
+
+# I dont understand, could we colloborate in this
     
 # TASK 2
 
